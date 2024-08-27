@@ -101,7 +101,7 @@
 </script>
 
 <div class="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-xl">
-  <h1 class="text-2xl font-bold mb-8 text-center"><span class="text-[#8c3814]">Civil</span><span class="text-[#333]">Tjek</span></h1>
+  <h1 class="text-2xl font-bold mb-8 text-center select-none"><span class="text-[#8c3814]">Civil</span><span class="text-[#333]">Tjek</span></h1>
   
   <div class="flex mb-4">
     <input
