@@ -39,6 +39,12 @@
     input.value = newValue;
   }
 
+  function handleKeyPress(event: KeyboardEvent) {
+    if (event.key === 'Enter' && licensePlate.length === 7 && !isLoading) {
+      fetchVehicleData();
+    }
+  }
+
   async function fetchVehicleData() {
     if (licensePlate.length !== 7) {
       error = 'Indtast venligst en gyldig nummerplade.';
@@ -78,7 +84,7 @@
         };
       }
     } catch (err) {
-      error = 'En Fejl er opstået.';
+      error = 'Fejl i fetching af data.';
       console.error(err);
     } finally {
       isLoading = false;
@@ -95,20 +101,21 @@
 </script>
 
 <div class="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-xl">
-  <h1 class="text-2xl font-bold mb-4">CivilTjek</h1>
+  <h1 class="text-2xl font-bold mb-8 text-center"><span class="text-[#8c3814]">Civil</span><span class="text-[#333]">Tjek</span></h1>
   
   <div class="flex mb-4">
     <input
       type="text"
       bind:value={licensePlate}
       on:input={handleInput}
+      on:keypress={handleKeyPress}
       placeholder="Indtast nummerplade"
       maxlength="7"
-      class="flex-grow px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 [&:not(:placeholder-shown)]:uppercase"
+      class="flex-grow px-3 py-2 border border-gray-300 rounded-l-md focus:border-transparent focus:ring-0 focus:ring-2 focus:ring-blue-500 [&:not(:placeholder-shown)]:uppercase"
     />
     <button
       on:click={fetchVehicleData}
-      class="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      class="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600 border-transparent focus:border-transparent focus:ring-0 focus:ring-2 focus:ring-blue-500 outline-none"
       disabled={isLoading || licensePlate.length !== 7}
     >
       {isLoading ? 'Søger...' : 'Søg'}
