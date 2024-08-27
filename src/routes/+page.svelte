@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { slide } from 'svelte/transition';
+  import "../app.css"
 
   let licensePlate: string = '';
   let vehicleData: any = null;
