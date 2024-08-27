@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { slide } from 'svelte/transition';
   import "../app.css"
+  import { inject } from '@vercel/analytics'
 
   let licensePlate: string = '';
   let vehicleData: any = null;
