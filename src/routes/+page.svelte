@@ -164,13 +164,13 @@
           bind:value={licensePlate}
           on:input={handleInput}
           on:keypress={handleKeyPress}
-          placeholder="Indtast nummerplade"
+          placeholder="Indtast nummerplade..."
           maxlength="7"
-          class="flex-grow px-4 py-3 border-2 border-gray-300 rounded-l-lg [&:not(:placeholder-shown)]:uppercase focus:outline-none"
+          class="flex-grow min-w-0 px-4 py-3 text-sm sm:text-base border-2 border-gray-300 rounded-l-lg [&:not(:placeholder-shown)]:uppercase focus:outline-none"
         />
         <button
           on:click={fetchVehicleData}
-          class="px-6 py-3 bg-blue-500 text-white rounded-r-lg hover:bg-blue-600 transition-colors duration-200 focus:outline-none"
+          class="px-5 py-3 text-sm sm:text-base whitespace-nowrap bg-blue-500 text-white rounded-r-lg hover:bg-blue-600 transition-colors duration-200 focus:outline-none"
           disabled={isLoading || licensePlate.length !== 7}
         >
           {isLoading ? "Søger..." : "Søg"}
