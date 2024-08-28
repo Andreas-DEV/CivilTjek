@@ -146,10 +146,10 @@
 </script>
 
 <div
-  class="min-h-screen w-full flex items-center justify-center p-4 bg-gray-100"
+  class="min-h-screen w-full flex items-center justify-center p-4 bg-orange-50"
 >
   <div
-    class="w-full max-w-md mx-auto bg-white rounded-lg shadow-2xl overflow-hidden"
+    class="w-full max-w-md mx-auto bg-white rounded-lg shadow-[0_10px_30px_rgba(51,_51,_51,_0.1)] overflow-hidden"
   >
     <div class="p-6 space-y-4">
       <h1 class="text-3xl font-bold text-center select-none mb-10 mt-5">
